@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
@@ -55,6 +56,9 @@ public class MyValue {
 			for (String s : pathDestenation) {
 				if (!s.equals(pathDestenation.get(pathDestenation.size() - 1))) {
 					d = d.path(s);
+					if(d instanceof ArrayNode){
+						change(d, pathDestenation.get(pathDestenation.size() - 1), value);
+					}
 
 				} else {
 					change(d, s, value);
@@ -102,8 +106,9 @@ public class MyValue {
 		JsonNode destenation = mapper.readTree(TypeReference.class.getResourceAsStream("/MySimpleRequest.json"));
 		JsonNode source = mapper.readTree(TypeReference.class.getResourceAsStream("/MySimpleRequest2.json"));
 		Map<String, String> mapping = new HashMap<>();
-		mapping.put("Leg.Instrument.Attributes.MaturityDate.Value", "maturityDate");
-		mapping.put("Leg.Instrument.Underlyings.Symbol", "ticker");
+		//mapping.put("Leg.Instrument.Attributes.MaturityDate.Value", "maturityDate");
+		//mapping.put("Leg.Instrument.Underlyings.Symbol", "ticker");
+		mapping.put("Leg.Instrument.Underlyings.AltIds.RIC.Value", "ticker");
 		MyValue m = new MyValue();
 		m.transfer(source, destenation, mapping);
 		// or:
