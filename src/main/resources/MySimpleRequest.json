@@ -1,0 +1,65 @@
+{
+  "ClientId": "",
+  "DataMap": {
+			"TemplateKey": {"Value": "ASRTemplate"},
+			"Pricer": {"Value": "Kepler"}
+    },
+  "Leg": {
+    "CashOrderQty": 10000,
+    "Side": "Buy",
+    "QuotePriceType": "PercentageOfSpot",
+    "SeekParameter": "Upfront",
+	"ExpireTime":"0001-01-01T00:00:00",
+	"TransactTime":	"0001-01-01T00:00:00",
+     "Instrument": {
+      "Symbol": "",
+      "Attributes": {
+      		"Currency": {"Value": "USD"},
+      		 "UpFrontSharesDelivery": {"Value": "False"},
+      		 "ExerciseStyle": {"Value": "EU"},
+      		 "StrikeDate": { "Value": "20180504"},
+      		 "MaturityDate": {"Value": "20180605"},
+			 "FirstExerciseDate": { "Value": "20180508"},
+			 "LastExerciseDate": {"Value": "20180508"},
+			  "CapValueAverageVwap": {"Value": "1"},
+			  "FloorValueAverageVwap": {"Value": "2"},
+ 			 "CompoQuanto": { "Value": "Domestic"},
+			"SecurityType":{"Value": "ASR"},
+			"UpFrontSharesDeliveryPercent":{"Value": "0"},				
+ 			"DiscountType": {   "Value": "PERCENT"},  
+			"Discount": {"Value": "0"},
+			"OffsetType": {"Value": "AVERAGE"},
+			"Volatility": {	 "Value": "5"},	
+			"IsFixedNotional": {"Value": "True"}		
+      				},
+      "Stipulations": {},
+      "Underlyings": [
+        {
+          "Symbol": "AAPL.O",
+          "AltIds": {"RIC": {"Value": "AAPL.O"}},
+          "Attributes": {},
+          "UndQty": 0,
+          "UndQtyCalc": "Unknown"
+        }
+      ],
+      "FaceValue": 0,
+      "UnitCalc": "Unknown"
+    },
+    "Parties": [
+      {
+        "IdSource": "Unknown",
+        "Id": "string",
+        "Role": "Unknown"
+      }
+    ]
+  },
+  "ValDateTime": "2018-05-07T13:01:16.315Z",
+  "EnvDateTime": "2018-05-07T13:01:16.315Z",
+  "ClQuoteReqId": "",
+  "RfqId": "",
+  "BatchId": "",
+  "Type": "RFQ:Request",
+  "UpdatedOn": "2018-05-07T13:01:16.315Z",
+  "UpdatedBy": "",
+  "SchemaVersion": "1.0"
+}
